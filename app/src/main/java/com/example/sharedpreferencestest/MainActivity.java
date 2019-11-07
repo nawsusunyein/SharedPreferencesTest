@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtPassword;
     Button btnLogin;
     SharedPreferences shPref;
+    Intent detailsIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txtUsername = (TextView) findViewById(R.id.txtUsername);
         txtPassword = (TextView) findViewById(R.id.txtPassword);
+        detailsIntent = new Intent(MainActivity.this,DetailsActivity.class);
+       
+
     }
 
     public void saveLoginCredentialsAndGoDetailsScreen(View view){
-        Intent detailsIntent = new Intent(MainActivity.this,DetailsActivity.class);
+
         shPref = getSharedPreferences("user_details",MODE_PRIVATE);
         String username = txtUsername.getText().toString();
         String password = txtPassword.getText().toString();

@@ -32,9 +32,9 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void logOut(View view){
         Intent loginIntent = new Intent(DetailsActivity.this,MainActivity.class);
-        SharedPreferences.Editor editor = shrPref.edit();
-        editor.clear();
-        editor.commit();
+        //SharedPreferences.Editor editor = shrPref.edit();
+        //editor.clear();
+        //editor.commit();
         startActivity(loginIntent);
     }
 }
